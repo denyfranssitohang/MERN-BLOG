@@ -2,20 +2,22 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px;
-    background-color: #68b35c;
-
-    .logo-app {
-        font-size: 20px;
-        font-weight: bold;
-        color: white;
-        margin: 0px;
-    }
+    padding: 10px;
+    padding-left: 30px;
+    background-color: #30432F;
 
     .menu-item {
-        font-size: 18px;
+        padding-right: 30px;
+        font-size: 16px;
         color: white;
         text-decoration: underline;
         cursor: pointer;
     }
+}
+
+.logo-app {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    margin: 0px;
 }

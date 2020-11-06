@@ -7,6 +7,9 @@
     width: 100%;
     border: none;
     color: white;
-    text-transform: uppercase;
-    cursor: pointer;
+    text-transform: uppercase;    
+    &:hover{
+        background-color: #30432F;
+        cursor: pointer;
+    }
 }

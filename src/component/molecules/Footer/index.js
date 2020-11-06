@@ -1,5 +1,5 @@
 import React from 'react'
-import { ICgithub, Logo } from '../../../assets'
+import { ICgithub } from '../../../assets'
 import './footer.scss'
 
 const Icon = ({img}) => {
@@ -15,7 +15,7 @@ const Footer = () => {
         <div>
             <div className="footer">
                 <div>
-                    <img className="logo" src={Logo} alt="logo" />
+                    <p className="logo-app">MERN-BLOG</p>
                 </div>
                 <div className="social-wrapper">
                     <Icon img={ICgithub} />
