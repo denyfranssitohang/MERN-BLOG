@@ -5,11 +5,19 @@
     border-radius: 12px;
     box-sizing: border-box;
     width: 100%;
-    border: none;
     color: white;
-    text-transform: uppercase;    
+    border: none;
+    text-transform: uppercase;
+    outline: none; 
+    
     &:hover{
-        background-color: #30432F;
+        background-color: #8DEF88;
         cursor: pointer;
+    }
+    &:active{
+        -moz-outline-radius: 12px;
+        // border: 2px solid #30432F;
+        background-color: #AAE4AC;
+        color: #E8F3E9;
     }
 }
