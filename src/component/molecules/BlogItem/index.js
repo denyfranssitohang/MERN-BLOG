@@ -4,17 +4,19 @@ import './blogitem.scss'
 import { Button } from '../../atoms'
 import { useHistory } from 'react-router-dom'
 
-const BlogItem = () => {
+const BlogItem = (props) => {
     const history = useHistory()
-    
+    const {image, title, name, body, date} = props;
     return (
         <div className="blog-item">
-            <img className="image-thumb" src={RegisterBg} alt="post" />
+            <img className="image-thumb" src={image} alt="post" />
             <div className="content-detail">
-                <p className="title">Title</p>
-                <p className="author">Author - Date Post</p>
-                <p className="body">Lorem ipsum odor amet, consectetuer adipiscing elit. Ac purus in massa egestas mollis varius dignissim elementum.</p>
-                <Button title="View Detail" onClick={() => history.push('/detail-blog')} />
+                <p className="title">{title}</p>
+                <p className="author">{name} - {date}</p>
+                <p className="body">{body}</p>
+                <p className="buttonView">
+                    <Button title="View Detail" onClick={() => history.push('/detail-blog')} />
+                </p>
             </div>            
         </div>
     )
