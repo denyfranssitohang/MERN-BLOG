@@ -19,6 +19,7 @@ const Home = () => {
             console.log('error: ', err);
         })
     }, [])
+    
     const history = useHistory();
     return (
         <div className="home-page-wrapper">

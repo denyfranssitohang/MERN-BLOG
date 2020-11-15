@@ -14,10 +14,11 @@ const BlogItem = (props) => {
                 <p className="title">{title}</p>
                 <p className="author">{name} - {date}</p>
                 <p className="body">{body}</p>
-                <p className="buttonView">
-                    <Button title="View Detail" onClick={() => history.push('/detail-blog')} />
-                </p>
-            </div>            
+                
+            </div>
+            <p className="buttonReview">
+                <Button title="View Detail" onClick={() => history.push('/detail-blog')} />
+            </p>            
         </div>
     )
 }
