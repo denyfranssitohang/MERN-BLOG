@@ -18,7 +18,7 @@ const BlogItem = (props) => {
             </div>
             <p className="buttonReview">
                 <Button title="View Detail" onClick={() => history.push('/detail-blog')} />
-            </p>            
+            </p>
         </div>
     )
 }
