@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { BlogItem, Button, Gap } from '../../component'
 import './home.scss'
 import {useHistory} from 'react-router-dom'
@@ -6,31 +6,21 @@ import Axios from 'axios'
 import { useDispatch, useSelector } from 'react-redux'
 
 const Home = () => {
-    // cara state lokal
-    // const [dataBlog, setDataBlog] = useState([]);
-
-    // cara state global
-    const {dataBlogs, name} = useSelector(state => state);
+    //__ sudah menggunakan combine reducer __\\
+    const {dataBlog} = useSelector(state => state.homeReducer);
     const dispatch = useDispatch();
 
-    console.log('Data Blog Global: ', dataBlogs);
     useEffect(() => {
-        setTimeout(() => {
-            dispatch({type: 'UPDATE_NAME'})
-        }, 3000)
-
         Axios.get('http://localhost:4000/v1/blog/posts')
         .then(result => {
-            console.log('data API: ', result.data);
             const responseAPI = result.data;
 
-            // setDataBlog(responseAPI.data);
             dispatch({type: 'UPDATE_DATA_BLOG', payload: responseAPI.data})
         })
         .catch(err => {
             console.log('error: ', err);
         })
-    }, [])
+    }, [dispatch])
     
     const history = useHistory();
     return (
@@ -38,10 +28,9 @@ const Home = () => {
             <div className="create-wrapper">
                 <Button title="create blog" onClick={() => history.push('/create-blog')} />
             </div>
-            <p> {name} </p>
             <Gap height={10} />
             <div className="content-wrapper">
-                {dataBlogs.map(blog => {
+                {dataBlog.map(blog => {
                     return <BlogItem key={blog._id} 
                     image={`http://localhost:4000/${blog.image}`}
                     title={blog.title}
